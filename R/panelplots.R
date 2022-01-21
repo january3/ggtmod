@@ -60,11 +60,11 @@ plot_gsea <- function(df, es_col="E", pval_col="adj.P.Val",
   }
   df$Title <- factor(df$Title, levels=df$Title)
 
-  ggplot(df,
+  g1 <- ggplot(df,
          aes_string(x="Title", y="log10_pval", fill=es_col)) + geom_bar(stat="identity") +
     xlab("") +
     ylab("-log10(FDR)") +
     coord_flip()
 
-
+  g1
 }
